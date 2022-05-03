@@ -1,105 +1,61 @@
-#include <stdio.h>
-
 #include <stdlib.h>
-
-#include "stdbool.h"
-
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
 /**
+ * isNum - check if string array is num
+ * @num: string to check
+ * Return: 0 if it's a number
+ *         1 if it's not a number
+*/
 
- * is_num - iterate through each argv to test if it's a number
-
- * @args: a argv
-
- * Return: true only if entire string is a number, false if not
-
- */
-
-
-bool is_num(char *args)
-
+int isNum(char num[])
 {
+	int i, l = strlen(num);
 
-	int j = 0;
-
-
-	for (j = 0; args[j]; j++)
-
+	for (i = 0; i < l; i++)
 	{
-
-		if (!(args[j] >= '0' && args[j] <= '9'))
-
-			return (0);
-
+		if (!isdigit(num[i]))
+			return (1);
 	}
-
-	return (1);
-
+	return (0);
 }
 
 
 /**
-
- * main - addition of argument numbers passed to program on a line
-
- * @argc: argument counter
-
- * @argv: arguments numbers to add
-
- * Return: 0 on success, 1 if arguments not numbers
-
- */
-
+ * main - a program that adds positive numbers
+ *
+ * @argc: holds the number of arguments passed
+ * @argv: array pointer that holds the arguments passed
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(int argc, char *argv[])
-
 {
-
-	int i = 1;
-
-	int sum = 0;
-
+	int i, sum;
 
 	if (argc == 1)
-
 	{
-
 		printf("0\n");
-
-		return (0);
-
 	}
-
-
-	while (i < argc)
-
+	else
 	{
-
-		if (is_num(argv[i]))
-
+		sum = 0;
+		for (i = 1; i < argc; i++)
 		{
-
-			sum += atoi(argv[i]);
-
+			if (isNum(argv[i]) == 0)
+			{
+				sum += atoi(argv[i]);
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-
-		else
-
-		{
-
-			printf("Error\n");
-
-			return (1);
-
-		}
-
-		i++;
-
+		printf("%d\n", sum);
 	}
-
-	printf("%d\n", sum);
-
-
 	return (0);
-
 }
