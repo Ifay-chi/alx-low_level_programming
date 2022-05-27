@@ -1,6 +1,6 @@
 /*
  * File: 103-find_loop.c
- * Author: Ugwu Promise 
+ * Author: Ugwu Promise
  */
 
 #include "lists.h"
