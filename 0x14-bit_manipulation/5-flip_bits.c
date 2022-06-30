@@ -1,6 +1,6 @@
 /*
  * File: 5-flip_bits.c
- * Author: Ugwu Promise 
+ * Author: ugwu Promise
  */
 
 #include "main.h"

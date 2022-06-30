@@ -1,6 +1,6 @@
 /*
  * File: 3-set_bit.c
- * Author: Ugwu Promise 
+ * Author: Ugwu Promise
  */
 
 #include "main.h"
@@ -22,8 +22,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	return (1);
 }
-
-
 
 
 

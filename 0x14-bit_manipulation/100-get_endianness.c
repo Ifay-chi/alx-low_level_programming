@@ -1,6 +1,6 @@
 /*
  * File: 100-get_endianness.c
- * Author: Ugwu Promise 
+ * Author: Ugwu Promise
  */
 
 #include "main.h"
